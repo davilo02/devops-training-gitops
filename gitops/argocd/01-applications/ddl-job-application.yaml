@@ -8,7 +8,7 @@ spec:
   source:
     repoURL: https://github.com/davilo02/devops-training-gitops.git
     targetRevision: HEAD
-    path: project-skeleton/k8s/03-jobs
+    path: k8s/03-jobs
   destination:
     server: https://kubernetes.default.svc
     namespace: database
