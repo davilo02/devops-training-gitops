@@ -1,0 +1,19 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: database
+  namespace: argocd
+spec:
+  project: training-project
+  source:
+    repoURL: https://github.com/davilo02/devops-training-gitops.git
+    targetRevision: HEAD
+    path: project-skeleton/k8s/02-database
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: database
+  syncPolicy:
+    # TODO ejercicio 3:
+    # Empezar en manual y valorar despues si activar auto-sync.
+    syncOptions:
+      - CreateNamespace=true
